@@ -1,12 +1,12 @@
 ## Latest Docker image with Newman for GitLab Continuous Integration Pipeline
 
 ### Description
-This image runs Newman-3.9.3 on latest Node-9.9.0 on Alpine-3.6.
+This image runs Newman-5.2.2 on Node-14.5
 
 This image does not have an entrypoint so it can be used in GitLab CI Pipeline.
 
 Docker hub url: 
- - [wojciechzurek/newman-ci](https://hub.docker.com/r/wojciechzurek/newman-ci/)
+ - [skeletondocker/newman-ci](https://hub.docker.com/r/skeletondocker/newman-ci/)
 
 #### Gitlab CI
 Example .gitlab-ci.yml:
@@ -18,7 +18,7 @@ stages:
 
 postman-test:
   stage: postman-test
-  image: wojciechzurek/newman-ci
+  image: skeletondocker/newman-ci
   script:
     - newman run path/to/collection.json -e  path/to/environments.json --reporters cli,html --reporter-html-export newman-results.html --color
   artifacts:
@@ -32,11 +32,11 @@ postman-test:
 Docker Pull Command
 
 ```
-docker pull wojciechzurek/newman-ci
+docker pull skeletondocker/newman-ci
 ```
 
 Docker Run Command
 
 ```
-docker run wojciechzurek/newman-ci newman --help
+docker run skeletondocker/newman-ci newman --help
 ```

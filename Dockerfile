@@ -1,7 +1,7 @@
-FROM node:9-alpine
-MAINTAINER Wojciech Żurek <mail@wojciechzurek.eu>
+FROM node:14.5
+MAINTAINER Rishat Sultanov <rihasultanov@gmail.com>
 
-ENV NEWMAN_VERSION 3.9.3
+ENV NEWMAN_VERSION 5.2.2
 
 RUN npm install -g newman@${NEWMAN_VERSION};
 
