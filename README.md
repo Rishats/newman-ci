@@ -20,7 +20,7 @@ postman-test:
   stage: postman-test
   image: skeletondocker/newman-ci
   script:
-    - newman run path/to/collection.json -e  path/to/environments.json --reporters cli,html --reporter-html-export newman-results.html --color
+    - newman run path/to/collection.json -e  path/to/environments.json -r cli,html --reporter-html-export newman-results.html --color on
   artifacts:
     when: always
     paths:
